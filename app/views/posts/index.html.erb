@@ -1,0 +1,8 @@
+
+
+<% @posts.each do |post| %>
+  <div>
+    <p><a href="<%= post.link_url %>"></a></li></p>
+    <p>Added by <%= User.where(:id => post.user_id).name %></p>
+    <p>Votes:<%= post.votes %></p>
+  </div>
