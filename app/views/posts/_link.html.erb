@@ -1,0 +1,27 @@
+
+<%= form_for(@post) do |f| %>
+
+  <% if @post.errors.any? %>
+    Please correct the following errors:
+    <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="field">
+   <br>
+    <%= f.text_field :catagory, placeholder: "Catagory" %>
+  </div>
+
+  <div class="field">
+   <br>
+    <%= f.text_field :link_url, placeholder: " link URL" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
