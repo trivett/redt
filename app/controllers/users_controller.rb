@@ -7,8 +7,11 @@ class UsersController < ApplicationController
 
 
   def new
-    redirect_to root_path
-    @user = User.new
+    unless current_user
+      @user = User.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create

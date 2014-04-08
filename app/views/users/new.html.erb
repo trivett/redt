@@ -1,0 +1,37 @@
+<%= form_for(@user) do |f| %>
+
+  <% if @user.errors.any? %>
+    Please correct the following errors:
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+ <fieldset>
+  <div class="field">
+    <br>
+    <%= f.text_field :name, placeholder: "Name:" %>
+  </div>
+  <div class="field">
+   <br>
+    <%= f.text_field :email, placeholder: "Email:" %>
+  </div>
+
+  <% unless @user.id %>
+    <div class="field">
+ <br>
+      <%= f.password_field :password, placeholder: "Password:" %>
+    </div>
+    <div class="field">
+  <br>
+      <%= f.password_field :password_confirmation, placeholder: "Password Again:" %>
+    </div>
+  <% end %>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</fieldset>
+<% end %>

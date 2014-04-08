@@ -2,6 +2,10 @@
 
 <% @posts.each do |post| %>
   <div>
+    <p><%= button_to "+1", { :action => "create", :id => @post.id }, :remote => true %>
+
+    <%= button_to "-1", { :action => "create", :id => @post.id }, :remote => true %>
+    <p>
     <p><a href="<%= post.link_url %>"></a></li></p>
     <p>Added by <%= User.where(:id => post.user_id).name %></p>
     <p>Votes:<%= post.votes %></p>
