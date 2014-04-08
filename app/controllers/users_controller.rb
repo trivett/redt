@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+  def show
+    @user = User.find(params[:id])
+    @posts = Post.where(:user_id => @user.id)
+  end
+
+
   def new
     redirect_to root_path
     @user = User.new
@@ -13,8 +19,6 @@ class UsersController < ApplicationController
     else
       render "new"
     end
-
-
   end
 
 
