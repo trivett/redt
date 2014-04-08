@@ -49,4 +49,5 @@ gem "rspec-rails", :group => [:development, :test]
 
 gem "better_errors"
 gem "binding_of_caller"
+gem "shoulda-matchers"
 
