@@ -12,18 +12,32 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    if @user.save
+    @post.votes = 1
+    if @post.save
       redirect_to posts_path
     else
       render "new"
     end
   end
 
+  def upvote
+    @post = Post.find(params[:id])
+    @post.upvote
+    @post.save
+    redirect_to posts_path
+  end
 
+
+  def downvote
+    @post = Post.find(params[:id])
+    @post.downvote
+    @post.save
+    redirect_to posts_path
+  end
 
   private
   def post_params
-    params.require(:user).permit(:link_url)
+    params.require(:post).permit(:link_url)
   end
 
 

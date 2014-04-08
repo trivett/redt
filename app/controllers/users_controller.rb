@@ -24,6 +24,15 @@ class UsersController < ApplicationController
     end
   end
 
+    def update
+    # @ = Song.find(params[:id])
+    # @song.update(song_params)
+    # @song.price = params[:song][:price]
+    # @song.save
+    # redirect_to song_path(@song)
+
+  end
+
 
 
   private

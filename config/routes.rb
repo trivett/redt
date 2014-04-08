@@ -3,6 +3,8 @@ Redt::Application.routes.draw do
   post '/sessions', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
+  post "/upvote/:id", to: 'posts#upvote', as: :upvote
+  post "/downvote/:id", to: 'posts#downvote', as: :downvote
   resources :users #do
   #resources :posts, shallow: true
   #end
