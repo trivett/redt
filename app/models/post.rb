@@ -6,7 +6,13 @@ class Post < ActiveRecord::Base
 
   validates :link_url, presence: true, uniqueness: true
 
+  def upvote
+    self.votes += 1
+  end
 
+  def downvote
+    self.votes -= 1
+  end
 
 
 end
