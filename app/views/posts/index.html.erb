@@ -6,7 +6,7 @@
           <p>Added by <%= post.user.name %> | Votes:<%= post.votes %></p>
     <p><%= button_to("upvote", upvote_path(post)) %>  <%= button_to("downvote", downvote_path(post)) %> </p>
 
-<%= image_tag  post.link_url  %>
+<%= link_to(image_tag(post.link_url), post.link_url)  %>
     <p><a href="<%= post.link_url %>"><%= post.link_url %></a></p>
 
   </fieldset>

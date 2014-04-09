@@ -1,1 +1,21 @@
-index.html.erb
+<% @users.each do |user| %>
+  <% unless current_user.id == user.id %>
+    <p>Name:  <%=user.name %></p>
+    <p>Email: <%=user.email %></p>
+    Posts:<br>
+    <% @posts = user.posts.all %>
+    <% @posts.each do |post| %>
+    <div>
+    <fieldset>
+          <p>Added by <%= post.user.name %> | Votes:<%= post.votes %></p>
+    <p><%= button_to("upvote", upvote_path(post)) %>  <%= button_to("downvote", downvote_path(post)) %> </p>
+
+<%= link_to(image_tag(post.link_url), post.link_url)  %>
+    <p><a href="<%= post.link_url %>"><%= post.link_url %></a></p>
+
+  </fieldset>
+  </div>
+  <% end %>
+  <% end %>
+
+<% end %>

@@ -24,10 +24,12 @@ class UsersController < ApplicationController
     end
   end
 
-    def update
+  def index
+    @users = User.all
+    #@posts = Post.all
 
 
-   end
+  end
 
 
 
