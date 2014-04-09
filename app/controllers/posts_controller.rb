@@ -27,7 +27,6 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-
   def downvote
     @post = Post.find(params[:id])
     @post.downvote

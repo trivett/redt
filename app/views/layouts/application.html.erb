@@ -10,13 +10,13 @@
  <p>
   <% if current_user  %>
       <%= link_to("#{current_user.name}", user_path(current_user.id)) %> |
-      <%= link_to "Logout", logout_path %>
+      <%= link_to "Logout", logout_path %> |
       <%= link_to("Post a link", new_post_path) %>
   <% else %>
-    <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Sign Up", new_user_path %> |
     <%= link_to "Login", login_path %>
   <% end %>
-  <%= link_to("Browse posts", posts_path) %>
+  | <%= link_to("Browse posts", posts_path) %>
 </p>
 
 <p>
